@@ -1,0 +1,40 @@
+/* Scheduled Messages Styles */
+.scheduled-messages {
+  padding: 20px;
+}
+
+.scheduled-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.scheduled-message-info {
+  flex: 1;
+}
+
+.scheduled-message-content {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.scheduled-message-time {
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+}
+
+.scheduled-message-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.scheduled-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-tertiary);
+}

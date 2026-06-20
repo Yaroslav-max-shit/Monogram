@@ -1,0 +1,53 @@
+/* Premium стили */
+
+.premium-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  border-radius: 20px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.premium-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  margin: 16px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(249,115,22,0.1));
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.premium-banner:hover {
+  transform: translateY(-2px);
+}
+
+.premium-banner-title {
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+.premium-banner-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.premium-modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.premium-plan.selected {
+  transform: scale(1.02);
+  border: 2px solid var(--accent);
+}

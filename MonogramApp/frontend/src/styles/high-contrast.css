@@ -1,0 +1,55 @@
+/* High Contrast Theme */
+body.high-contrast,
+[data-theme="high-contrast"] {
+  --bg-color: #ffffff !important;
+  --text-color: #000000 !important;
+  --border-color: #000000 !important;
+  --bg-secondary: #f0f0f0 !important;
+  --accent-color: #0000ff !important;
+  --message-bg: #e0e0e0 !important;
+  --link-color: #0000ff !important;
+  --error-color: #cc0000 !important;
+  --success-color: #006600 !important;
+  --bg-primary: #ffffff !important;
+  --bg-secondary: #f0f0f0 !important;
+  --bg-tertiary: #e0e0e0 !important;
+  --bg-hover: #e0e0e0 !important;
+  --text-primary: #000000 !important;
+  --text-secondary: #1a1a1a !important;
+  --text-tertiary: #333333 !important;
+  --border-color: #000000 !important;
+  --hover-bg: #e0e0e0 !important;
+  --active-bg: #cccccc !important;
+  --received-bg: #e0e0e0 !important;
+  --sent-bg: #0000ff !important;
+  --accent: #0000ff !important;
+  --danger: #cc0000 !important;
+  --success: #006600 !important;
+  --glass-bg: rgba(0, 0, 0, 0.08) !important;
+  --glass-border: rgba(0, 0, 0, 0.12) !important;
+}
+
+body.high-contrast .message.own {
+  background: #0000ff !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+body.high-contrast .message.other {
+  background: #e0e0e0 !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+body.high-contrast .chat-input {
+  border: 2px solid #000000 !important;
+}
+
+body.high-contrast button:focus-visible,
+body.high-contrast input:focus-visible,
+body.high-contrast textarea:focus-visible,
+body.high-contrast select:focus-visible {
+  outline: 3px solid #0000ff !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}

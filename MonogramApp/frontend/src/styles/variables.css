@@ -1,0 +1,181 @@
+/* ============================================ */
+/* СВЕТЛАЯ ТЕМА (по умолчанию)                  */
+/* ============================================ */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-tertiary: #e5e7eb;
+  --bg-hover: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --border-color: #e5e7eb;
+  --hover-bg: #f3f4f6;
+  --active-bg: #e5e7eb;
+  --received-bg: #f1f3f4;
+  --sent-bg: #3b82f6;
+  --danger: #ef4444;
+  --success: #10b981;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================ */
+/* ТЁМНАЯ ТЕМА                                 */
+/* ============================================ */
+body.dark-mode {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-hover: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-color: #374151;
+  --hover-bg: #374151;
+  --active-bg: #374151;
+  --received-bg: #1f2937;
+  --sent-bg: #3b82f6;
+  --danger: #f87171;
+  --success: #34d399;
+  --glass-bg: rgba(0, 0, 0, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================ */
+/* AMOLED ТЕМА (чёрный + зелёный акцент)        */
+/* ============================================ */
+body.amoled-mode {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #1a1a1a;
+  --bg-hover: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-tertiary: #888888;
+  --border-color: #2a2a2a;
+  --hover-bg: #1a1a1a;
+  --active-bg: #222222;
+  --received-bg: #0a0a0a;
+  --sent-bg: #00e676;
+  --accent: #00e676;
+  --danger: #ff5252;
+  --success: #00e676;
+  --glass-bg: rgba(0, 230, 118, 0.05);
+  --glass-border: rgba(0, 230, 118, 0.15);
+}
+
+/* ============================================ */
+/* NORD ТЕМА                                    */
+/* ============================================ */
+body.nord-mode {
+  --bg-primary: #2e3440;
+  --bg-secondary: #3b4252;
+  --bg-tertiary: #434c5e;
+  --bg-hover: #434c5e;
+  --text-primary: #eceff4;
+  --text-secondary: #d8dee9;
+  --text-tertiary: #a0a8b8;
+  --border-color: #4c566a;
+  --hover-bg: #434c5e;
+  --active-bg: #4c566a;
+  --received-bg: #3b4252;
+  --sent-bg: #88c0d0;
+  --accent: #88c0d0;
+  --danger: #bf616a;
+  --success: #a3be8c;
+  --glass-bg: rgba(136, 192, 208, 0.08);
+  --glass-border: rgba(136, 192, 208, 0.15);
+}
+
+/* ============================================ */
+/* DRACULA ТЕМА                                 */
+/* ============================================ */
+body.dracula-mode {
+  --bg-primary: #282a36;
+  --bg-secondary: #343746;
+  --bg-tertiary: #44475a;
+  --bg-hover: #44475a;
+  --text-primary: #f8f8f2;
+  --text-secondary: #ccc;
+  --text-tertiary: #9090a0;
+  --border-color: #6272a4;
+  --hover-bg: #44475a;
+  --active-bg: #6272a4;
+  --received-bg: #343746;
+  --sent-bg: #bd93f9;
+  --accent: #bd93f9;
+  --danger: #ff5555;
+  --success: #50fa7b;
+  --glass-bg: rgba(189, 147, 249, 0.08);
+  --glass-border: rgba(189, 147, 249, 0.15);
+}
+
+/* ============================================ */
+/* LAVENDER ТЕМА                                */
+/* ============================================ */
+body.lavender-mode {
+  --bg-primary: #1a1625;
+  --bg-secondary: #231e30;
+  --bg-tertiary: #2d2740;
+  --bg-hover: #2d2740;
+  --text-primary: #e8e0f0;
+  --text-secondary: #c0b0d8;
+  --text-tertiary: #8878a0;
+  --border-color: #3d3550;
+  --hover-bg: #2d2740;
+  --active-bg: #3d3550;
+  --received-bg: #231e30;
+  --sent-bg: #b08aff;
+  --accent: #b08aff;
+  --danger: #ff6b9d;
+  --success: #7dd3a0;
+  --glass-bg: rgba(176, 138, 255, 0.08);
+  --glass-border: rgba(176, 138, 255, 0.15);
+}
+
+/* ============================================ */
+/* OCEAN ТЕМА                                   */
+/* ============================================ */
+body.ocean-mode {
+  --bg-primary: #0d1b2a;
+  --bg-secondary: #1b2838;
+  --bg-tertiary: #253545;
+  --bg-hover: #253545;
+  --text-primary: #e0e8f0;
+  --text-secondary: #a0b0c0;
+  --text-tertiary: #607080;
+  --border-color: #304050;
+  --hover-bg: #253545;
+  --active-bg: #304050;
+  --received-bg: #1b2838;
+  --sent-bg: #4fc3f7;
+  --accent: #4fc3f7;
+  --danger: #ef5350;
+  --success: #66bb6a;
+  --glass-bg: rgba(79, 195, 247, 0.08);
+  --glass-border: rgba(79, 195, 247, 0.15);
+}
+
+/* ============================================ */
+/* ВЫСОКИЙ КОНТРАСТ                             */
+/* ============================================ */
+body.high-contrast {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #1a1a1a;
+  --bg-hover: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-tertiary: #cccccc;
+  --border-color: #ffffff;
+  --hover-bg: #333333;
+  --active-bg: #555555;
+  --received-bg: #1a1a1a;
+  --sent-bg: #ffff00;
+  --accent: #ffff00;
+  --danger: #ff0000;
+  --success: #00ff00;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.3);
+}

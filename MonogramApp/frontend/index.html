@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/assets/images/icon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#667eea" />
+    
+    <link rel="modulepreload" href="/src/components/Sidebar.tsx">
+    <link rel="modulepreload" href="/src/components/ChatWindow.tsx">
+    
+    <title>Monogram</title>
+    
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body, #root {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .app-container {
+        height: 100%;
+        overflow: hidden;
+      }
+      body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+      
+      #preloader {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        z-index: 99999;
+        transition: opacity 0.6s ease;
+      }
+      
+      .preload-logo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 28px;
+        filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+        animation: logoPulse 2s ease-in-out infinite;
+      }
+      
+      @keyframes logoPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      .preload-text {
+        position: relative;
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -1px;
+        color: rgba(255,255,255,0.15);
+        margin-bottom: 16px;
+        user-select: none;
+        overflow: hidden;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+      }
+      
+      .preload-text-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: white;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: width 0.3s ease;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      
+      .preload-subtitle {
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.6);
+        letter-spacing: 1px;
+        margin-bottom: 24px;
+      }
+      
+      .preload-percent {
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.8);
+        margin-top: 16px;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 1px;
+      }
+      
+      .preload-status {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.5);
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader">
+      <img class="preload-logo" src="/assets/images/icon-192.png" alt="Monogram" />
+      <div class="preload-text">
+        <span style="display: inline-block; padding-bottom: 7px;">Monogram</span>
+        <div class="preload-text-fill" id="preload-fill" style="padding-bottom: 7px;">Monogram</div>
+      </div>
+      <p class="preload-subtitle">Загрузка приложения</p>
+      <p class="preload-percent" id="preload-percent">0%</p>
+      <p class="preload-status" id="preload-status">Подготовка...</p>
+    </div>
+    <div id="root"></div>
+    
+    <script type="module">
+      (function() {
+        const textFill = document.getElementById('preload-fill');
+        const percentEl = document.getElementById('preload-percent');
+        const statusEl = document.getElementById('preload-status');
+        const preloader = document.getElementById('preloader');
+        
+        let currentPercent = 0;
+        
+        // Функция обновления прогресса
+        window.updatePreloadProgress = function(percent, status) {
+          if (percent > currentPercent) {
+            currentPercent = Math.min(percent, 100);
+            if (textFill) textFill.style.width = Math.round(currentPercent) + '%';
+            if (percentEl) percentEl.textContent = Math.round(currentPercent) + '%'; 
+            if (status && statusEl) statusEl.textContent = status;
+          }
+          
+          if (currentPercent >= 100) {
+            setTimeout(() => {
+              if (preloader) {
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.remove(), 600);
+              }
+            }, 300);
+          }
+        };
+        
+        // Имитация начальной загрузки
+        let progress = 0;
+        const interval = setInterval(() => {
+          if (progress < 90) {
+            progress += Math.random() * 10;
+            if (progress > 90) progress = 90;
+            window.updatePreloadProgress(Math.round(progress), 'Загрузка ресурсов...');  // ← округляем
+          }
+        }, 150);
+        
+        // Когда React загрузится
+        window.addEventListener('load', () => {
+          clearInterval(interval);
+          window.updatePreloadProgress(100, 'Готово!');
+        });
+      })();
+    </script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.__VITE_HMR_HOST__ = 'localhost';
+    </script>
+  </body>
+</html>

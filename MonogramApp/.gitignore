@@ -1,0 +1,58 @@
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+myenv/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/build/
+
+# IDE
+.idea/
+.vs/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# Uploads (runtime data)
+uploads/files/*
+uploads/avatars/*
+uploads/stickers/*
+uploads/sounds/*
+uploads/wallpapers/*
+uploads/bot_files/*
+!uploads/**/.gitkeep
+
+# Build artifacts
+*.spec
+dist/
+
+# Docker
+.dockerignore

@@ -1,0 +1,496 @@
+.app-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.loading-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.loading-screen .logo img {
+  width: 120px;
+  height: 120px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.loading-screen h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.loading-screen p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  margin-top: 32px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0%;
+  background: white;
+  border-radius: 2px;
+  animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 100%; }
+  100% { width: 0%; }
+}
+
+/* ============================================ */
+/* ЭКРАН БЕЗ ВЫБРАННОГО ЧАТА — ПО ЦЕНТРУ */
+/* ============================================ */
+
+.no-chat-selected {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  width: 100%;
+}
+
+.no-chat-icon {
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.no-chat-selected h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+}
+
+.no-chat-selected p {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* Админ доступ запрещён */
+.admin-access-denied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding: 20px;
+}
+
+.admin-access-denied-card {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.admin-access-denied-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.admin-access-denied-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.admin-access-denied-btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-access-denied-btn.primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+}
+
+.admin-access-denied-btn.secondary {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Основной layout */
+.app-main-layout {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Welcome screen */
+.welcome-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg-primary);
+}
+
+.welcome-screen h2 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.welcome-screen p {
+  color: var(--text-tertiary);
+}
+
+.premium-welcome-badge {
+  margin-top: 16px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100000;
+  pointer-events: none;
+}
+
+.toast-container .toast {
+  pointer-events: auto;
+}
+
+.chat-fullscreen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.chat-fullscreen-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.back-to-chats {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.back-to-chats:hover {
+  background: var(--hover-bg);
+}
+
+/* Полноэкранный QR */
+.qr-fullscreen-overlay {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.qr-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+}
+
+.qr-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.qr-avatar-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.qr-avatar-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.qr-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.qr-avatar-circle span {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.qr-avatar-section h2 {
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.qr-avatar-section p {
+  color: rgba(255,255,255,0.8);
+}
+
+.qr-code-wrapper {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+}
+
+.qr-logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-logo-overlay img {
+  width: 32px;
+  height: 32px;
+}
+
+.qr-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.qr-action-btn {
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qr-action-btn.primary {
+  background: white;
+  color: #667eea;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.qr-action-btn.secondary {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.qr-hint {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ============================================ */
+/* ПОЛНОЭКРАННЫЙ QR (№6-10)                    */
+/* ============================================ */
+
+/* ФИКСЫ ВЁРСТКИ                               */
+/* ============================================ */
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 1rem;
+}
+
+.chat-window {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.chat-input-container {
+  flex-shrink: 0;
+  position: relative;
+  background: var(--bg-secondary);
+  z-index: 10;
+}
+
+.sidebar-chats {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* МОБИЛЬНЫЕ ФИКСЫ */
+@media (max-width: 768px) {
+  .app-container {
+    width: 100%;
+  }
+  
+  .app-main-layout {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .app-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .chat-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: var(--bg-primary);
+  }
+  
+  .back-to-chats {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+}
+
+
+
+
+/* Lighter button backgrounds for SVG visibility */
+.chat-header-action svg,
+.sidebar-action-btn svg,
+.chat-input-action svg {
+  color: var(--text-primary);
+}
+
+.chat-header-action {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+.chat-header-action:hover {
+  background: var(--hover-bg);
+}
+
+/* Search bar without dark background */
+.search-input {
+  background: transparent !important;
+  border: none !important;
+}

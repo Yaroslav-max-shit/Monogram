@@ -1,0 +1,15 @@
+{
+  "appId": "com.monogram.app",
+  "appName": "Monogram Messenger",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true,
+    "allowNavigation": ["*.devtunnels.ms", "localhost"]
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}
